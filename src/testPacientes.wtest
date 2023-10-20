@@ -11,8 +11,22 @@ describe "Test Pacientes" {
 	
 	test "Leonardo puede usar los 3 aparatos" {
 		assert.that(leonardo.puedeUsar(magneto) and leonardo.puedeUsar(bicicleta) and leonardo.puedeUsar(minitramp))
+		/* hacer 3 assert individuales */
 	}
 	
+	test "Leonardo puede usar el magneto" {
+		assert.that(leonardo.puedeUsar(magneto))
+	}
+	
+	test "Leonardo puede usar la bicicleta" {
+		assert.that(leonardo.puedeUsar(bicicleta))
+	}
+	
+	test "Leonardo puede usar el minitramp" {
+		assert.that(leonardo.puedeUsar(minitramp))
+	}
+	
+	/* separar en test individuales */
 	test "Milena puede usar solo magneto" {
 		assert.that(milena.puedeUsar(magneto) and not milena.puedeUsar(bicicleta) and not milena.puedeUsar(minitramp))
 	}
@@ -31,6 +45,7 @@ describe "Test Pacientes" {
 		leonardo.usarAparato(bicicleta)
 		assert.equals(6,leonardo.dolor())
 		assert.equals(23,leonardo.fortaleza())
+		/* hacer 2 test */
 	}
 	
 	test "Nivel de fortaleza de Leonardo sube a 24 despues de usar 1 vez minitramp" {
